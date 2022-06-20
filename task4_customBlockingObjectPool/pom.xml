@@ -9,11 +9,21 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>task4</artifactId>
+    <artifactId>task4_customBlockingObjectPool</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 </project>

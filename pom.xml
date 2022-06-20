@@ -9,15 +9,15 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>task1</module>
-        <module>task2</module>
-        <module>task3</module>
-        <module>task4</module>
+        <module>task1_copmareMapImplementations</module>
+        <module>task2_synchronizedList</module>
+        <module>task3_customMessageBus</module>
+        <module>task4_customBlockingObjectPool</module>
     </modules>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
 </project>

@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>task3</artifactId>
+    <artifactId>task3_customMessageBus</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

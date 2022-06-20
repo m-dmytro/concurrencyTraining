@@ -28,7 +28,7 @@ public class BlockingObjectPool {
   public BlockingObjectPool(int size) {
     lock.lock();
     try {
-      this.currentNumberOfAvailablePlaces = 0;
+      this.currentNumberOfAvailablePlaces = size;
       this.initialNumberOfAvailablePlaces = size;
 
       pool = new ArrayList<>(size);
@@ -45,13 +45,15 @@ public class BlockingObjectPool {
   public Object get() throws InterruptedException {
     lock.lock();
     try {
-      while (currentNumberOfAvailablePlaces >= initialNumberOfAvailablePlaces) {
+      while (pool.size() == 0 || currentNumberOfAvailablePlaces >= initialNumberOfAvailablePlaces) {
         someDataAvailableCondition.await();
       }
       ++currentNumberOfAvailablePlaces;
       noDataOverchargingCondition.signal();
 
-      return pool.get(0);
+      Object result = pool.get(0);
+      pool.remove(0);
+      return result;
     } finally {
       lock.unlock();
     }
